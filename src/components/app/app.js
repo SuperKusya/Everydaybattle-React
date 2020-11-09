@@ -4,9 +4,11 @@ import './app.css';
 
 import Card from '../card';
 import TextField from '../textfield';
-import Button from '../button';
+import ItemAddForm from '../item-add-form';
 
 export default class App extends React.Component {
+
+    maxId = 100;
 
     constructor() {
         super();
@@ -75,6 +77,40 @@ export default class App extends React.Component {
                 }
             })
         };
+        this.addItem = (text) => {
+            //generate id (демонстрация работы Реакта, айди генерируются сервером)
+
+            const newItem = {
+                label: text,
+                id: this.maxId++
+            };
+
+            this.setState(( { data } ) => {
+                const { users } = data;
+
+                const newUsers = users.map((user) => {
+                    const { tasks } = user;
+                    let newUser = {...user};
+
+                    const newTasksArray = [
+                        ...tasks,
+                        newItem
+                    ]
+
+                    newUser.tasks = newTasksArray;
+
+                    return newUser;
+                })
+            
+
+                return {
+                    data: {
+                        users: newUsers
+                    }
+                }
+            })
+
+        }
     }
 
     render() {
@@ -87,13 +123,13 @@ export default class App extends React.Component {
                     onDeleted={ this.deleteItem }
                 />
             )
-        })
+        });
     
         return (
             <div>
                 { cards }
                 <TextField />
-                <Button />
+                <ItemAddForm onItemAdded={this.addItem} />
             </div>
         )
     }
