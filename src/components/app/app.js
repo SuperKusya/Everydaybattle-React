@@ -64,6 +64,9 @@ export default class App extends React.Component {
                 let newUser = {...user};
                 newUser.tasks = newTasksArray;
 
+                const newPoints = ++user.points
+                newUser.points = newPoints;
+
                 const newUsersArray = [
                     ...users.slice(0, userInx),
                     newUser,
