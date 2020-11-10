@@ -3,7 +3,6 @@ import React from 'react';
 import './app.css';
 
 import Card from '../card';
-import TextField from '../textfield';
 import ItemAddForm from '../item-add-form';
 
 export default class App extends React.Component {
@@ -131,7 +130,6 @@ export default class App extends React.Component {
         return (
             <div>
                 { cards }
-                <TextField />
                 <ItemAddForm onItemAdded={this.addItem} />
             </div>
         )
