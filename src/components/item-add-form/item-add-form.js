@@ -21,7 +21,15 @@ export default class ItemAddForm extends React.Component {
         let { shown, label } = this.state;
         e.preventDefault();
 
-        if(label === '' || label.trim() === '') {
+        if(!shown) {
+            this.setState({
+                shown: true
+            });
+
+            return;
+        }
+
+        if(shown && (label === '' || label.trim() === '')) {
             this.setState({
                 isValid: false
             });
@@ -29,13 +37,13 @@ export default class ItemAddForm extends React.Component {
             return false;
         }
 
-        if (shown) {
-            this.props.onItemAdded(label);
-        }
-        
+        this.props.onItemAdded(label);
+        this.setState({
+            isValid: true
+        });
+
         this.setState({
             label: '',
-            shown: true
         });
     };
 
