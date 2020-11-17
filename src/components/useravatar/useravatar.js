@@ -1,9 +1,12 @@
 import React from 'react';
-import './useravatar.css';
+import './_useravatar.scss';
 
 const UserAvatar = ( { avatar } ) => {
     return (
-        <img src={avatar} alt="аватар" className="card__avatar"></img>
+        <div className="card__label-image">
+            <img src={avatar} alt="аватар" className="card__avatar"></img>
+        </div>
+        
     ) 
 }
 

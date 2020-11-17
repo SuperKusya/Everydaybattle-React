@@ -1,5 +1,5 @@
 import React from 'react';
-import './username.css';
+import './_username.scss';
 
 const UserName = ( { name } ) => {
     return <div className="card__name"> { name } </div>

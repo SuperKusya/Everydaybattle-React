@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.css';
+import './_card.scss';
 
 import UserName from '../username/username';
 import UserPoints from '../userpoints/userpoints';
@@ -10,7 +10,7 @@ import CardList from '../cardlist/cardlist';
 const Card = ( { user, onDeleted } ) => {
     const { name, points, avatar, tasks, id } = user;
     return (
-        <div className="section">
+        <div className="card">
             <UserName name = { name } />
             <UserPoints points = { points } />
             <UserAvatar avatar= { avatar } />

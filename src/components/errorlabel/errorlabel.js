@@ -1,5 +1,5 @@
 import React from 'react';
-import './errorlabel.css';
+import './_errorlabel.scss';
 
 const ErrorLabel = ( ) => {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './item-add-form.css';
+import './_item-add-form.scss';
 
 import ErrorLabel from '../errorlabel';
 
@@ -66,18 +66,18 @@ export default class ItemAddForm extends React.Component {
         }
         
         return (
-            <div>
+            <div className="section-form">
                 { error }
-                <form onSubmit={this.onSubmit}>
+                <form className="add-task-form" onSubmit={this.onSubmit}>
                     <input type="text"
-                            className="addInput"
+                            className="section__input add-input"
                             onChange={this.onLabelChange}
                             placeholder="What needs to be done"
                             style={style}
                             value={this.state.label}
                     />
                     <button 
-                        className="section__button addButton" 
+                        className="section__button add-button" 
                         type="submit"
                     >
                         Добавить квест

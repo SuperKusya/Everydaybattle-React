@@ -1,5 +1,5 @@
 import React from 'react';
-import './carditem.css';
+import './_carditem.scss';
 
 // деструктуризация
 export default class cardItem extends React.Component {
@@ -21,8 +21,8 @@ export default class cardItem extends React.Component {
         const { label, id, onDeleted } = this.props; 
 
         return (
-            <label key={id}>
-                <input type="checkbox" className="card__item" onClick={ onDeleted } />
+            <label key={id} className="card__item" >
+                <input type="checkbox" onClick={ onDeleted } />
                 <span> {label} </span>
             </label>
         )   

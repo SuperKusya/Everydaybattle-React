@@ -1,5 +1,5 @@
 import React from 'react';
-import './cardlist.css';
+import './_cardlist.scss';
 
 import CardItem from '../carditem';
 
@@ -10,6 +10,7 @@ const CardList = ( { tasks, onDeleted } ) => {
 
         return (
             <CardItem { ...label } 
+                
                 key={ id }
                 onDeleted={ () => onDeleted(id) }
             />
@@ -17,7 +18,7 @@ const CardList = ( { tasks, onDeleted } ) => {
     });
 
     return (
-        <ul>
+        <ul className="card__list">
             { elements }
         </ul>
     )
