@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './app.css';
+import './_app.scss';
 
+import Header from '../header';
 import Card from '../card';
 import ItemAddForm from '../item-add-form';
 
@@ -129,8 +130,16 @@ export default class App extends React.Component {
     
         return (
             <div>
-                { cards }
-                <ItemAddForm onItemAdded={this.addItem} />
+                <Header />
+                
+                <main className="main">
+                    <div className="section">
+                        <div className="section__cards">
+                            { cards }
+                        </div>
+                        <ItemAddForm onItemAdded={this.addItem} />
+                    </div>
+                </main>
             </div>
         )
     }
