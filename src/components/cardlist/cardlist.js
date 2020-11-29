@@ -4,7 +4,7 @@ import './_cardlist.scss';
 import CardItem from '../carditem';
 
 
-const CardList = ( { tasks, onDeleted } ) => {
+const CardList = ( {tasks, onDeleted} ) => {
     const elements = tasks.map((item) => {
         const { id, ...label } = item;
 
@@ -22,6 +22,7 @@ const CardList = ( { tasks, onDeleted } ) => {
             { elements }
         </ul>
     )
+    
 }
 
 export default CardList;

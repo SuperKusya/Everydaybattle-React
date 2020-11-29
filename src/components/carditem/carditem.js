@@ -1,8 +1,11 @@
 import React from 'react';
 import './_carditem.scss';
 
-// деструктуризация
+import AppService from '../../services';
+
 export default class cardItem extends React.Component {
+
+    appService = new AppService();
 
     constructor() {
         super();
@@ -10,11 +13,6 @@ export default class cardItem extends React.Component {
         this.state = {
             done: false
         }
-
-        // this.onLabelClick = () => {
-        //     console.log(`${this.props.label}`);
-        // };
-        // onClick = { this.onLabelClick }
     }
 
     render() {
